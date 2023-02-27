@@ -27,6 +27,8 @@ export async function createAccount(input: any) {
     const doc: Account = new AccountModel({
       username: uname,
       password: hash,
+      // TODO : Validate phone number
+      phoneNumber: input.phoneNumber,
     });
     return await AccountModel.create(doc);
   } catch (error: any) {
